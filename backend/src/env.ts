@@ -1,8 +1,11 @@
+import "dotenv/config";
 import { z } from "zod";
 
 const envSchema = z.object({
     PORT: z.string().optional(),
     DATABASE_URL: z.string(),
+    RESEND_API_KEY: z.string(),
+    JWT_SECRET: z.string(),
 });
 
 function createEnv(env: NodeJS.ProcessEnv) {
